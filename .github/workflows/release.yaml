@@ -12,10 +12,10 @@ jobs:
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
-          filename: 'ansible.alfredworkflow'
+          filename: 'particle-docs.alfredworkflow'
           exclusions: '*.git* *img/ test*'
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "ansible.alfredworkflow"
+          artifacts: "particle-docs.alfredworkflow"
           token: ${{ secrets.GITHUB_TOKEN }}

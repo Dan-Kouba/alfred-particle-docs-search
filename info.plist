@@ -3,16 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>de.abyth.ansible</string>
+	<string>kouba.particle-docs</string>
 	<key>category</key>
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
-		<key>1B97E99D-8780-459B-9C67-6E3BA58B7510</key>
+		<key>C32781E5-0801-4442-B839-24CD944CB36B</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>DA99DDEC-C1E0-4AFF-8DEB-B97C6173E36F</string>
+				<string>30E00001-A06A-4CC2-BF74-F582E8FBDE59</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -20,16 +20,26 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9B0E9812-4A85-4084-B161-8B70142651F2</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy URL to clipboard</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Christian Strack</string>
+	<string>Dan Kouba</string>
 	<key>description</key>
-	<string>Ansible Documentation</string>
+	<string>Search the Particle docs</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>ansible</string>
+	<string>Particle Docs Search</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -37,17 +47,19 @@
 			<dict>
 				<key>browser</key>
 				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
 				<string></string>
-				<key>utf8</key>
-				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>DA99DDEC-C1E0-4AFF-8DEB-B97C6173E36F</string>
+			<string>30E00001-A06A-4CC2-BF74-F582E8FBDE59</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -67,7 +79,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>ansible</string>
+				<string>pd</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -81,15 +93,15 @@
 				<key>script</key>
 				<string>query=$1
 
-/usr/local/bin/python3 ansible.py ${query}</string>
+/usr/bin/python3 particle-docs.py $query</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>ansible.py</string>
+				<string></string>
 				<key>subtext</key>
-				<string>Search the ansible documentation</string>
+				<string>Search the Particle documentation</string>
 				<key>title</key>
-				<string>Ansible documentation</string>
+				<string>Particle Docs Search</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -98,7 +110,26 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>1B97E99D-8780-459B-9C67-6E3BA58B7510</string>
+			<string>C32781E5-0801-4442-B839-24CD944CB36B</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>9B0E9812-4A85-4084-B161-8B70142651F2</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
@@ -107,26 +138,31 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>1B97E99D-8780-459B-9C67-6E3BA58B7510</key>
+		<key>30E00001-A06A-4CC2-BF74-F582E8FBDE59</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<real>590</real>
 			<key>ypos</key>
-			<integer>195</integer>
+			<real>140</real>
 		</dict>
-		<key>DA99DDEC-C1E0-4AFF-8DEB-B97C6173E36F</key>
+		<key>9B0E9812-4A85-4084-B161-8B70142651F2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>540</integer>
+			<real>590</real>
 			<key>ypos</key>
-			<integer>100</integer>
+			<real>315</real>
+		</dict>
+		<key>C32781E5-0801-4442-B839-24CD944CB36B</key>
+		<dict>
+			<key>xpos</key>
+			<real>360</real>
+			<key>ypos</key>
+			<real>230</real>
 		</dict>
 	</dict>
-	<key>variablesdontexport</key>
+	<key>userconfigurationconfig</key>
 	<array/>
-	<key>version</key>
-	<string>1.0</string>
 	<key>webaddress</key>
-	<string>https://abyth.de</string>
+	<string>https://www.particle.io</string>
 </dict>
 </plist>

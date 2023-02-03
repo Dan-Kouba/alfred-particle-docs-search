@@ -3,9 +3,9 @@ from requests import post, exceptions
 from sys import argv
 from re import compile, match
 
-# Swiftype API being used by the ansible documentation page
-# for the latest ansible version (exposed for testing)
-url = "https://search-api.swiftype.com/api/v1/public/installs/yABGvz2N8PwcwBxyfzUc/search.json"
+# Swiftype API being used by the Particle documentation page
+url = "https://api.swiftype.com/api/v1/public/engines/suggest.json"
+engine_key = "xqs6ySrzs42txxzuWP_A"
 
 # Required fields in the API response (exposed for testing)
 fields = ["title", "url"]
@@ -13,7 +13,7 @@ fields = ["title", "url"]
 
 def parse_title(title: str) -> (str, str):
     """
-    Parse ansible swiftype API search response using regular expressions
+    Parse Particle Swiftype API search response using regular expressions
     """
     # Characters that are valid for title and subtitles
     valid_class = r'[a-zA-Z0-9 \.\,\_\-/|#\(\)\[\]]+'
@@ -40,10 +40,10 @@ def parse_title(title: str) -> (str, str):
 
 def query_api(url: str, search_string: str) -> [{}]:
     """
-    Query ansible swiftype API and deserialize the JSON response
+    Query Particle Swiftype API and deserialize the JSON response
     """
     try:
-        response = post(url, data={'q': search_string}).json()
+        response = post(url, data={'q': search_string, 'engine_key': engine_key}).json()
         # Check if the response was valid json, but contains an error
         if "error" in response:
             # Raise a ValueError to simplify error handling
@@ -58,7 +58,7 @@ def query_api(url: str, search_string: str) -> [{}]:
 
 def parse_results(results: {}) -> []:
     """
-    Transform the results from the ansible swiftype API to
+    Transform the results from the Particle Swiftype API to
     alfred script filter items
     """
     items = []

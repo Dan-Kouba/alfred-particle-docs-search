@@ -1,8 +1,8 @@
 # Alfred Ansible Workflow
 
-An [Alfred](https://www.alfredapp.com) workflow to search the [Ansible module documentation](https://docs.ansible.com/ansible/latest/index.html#).
+An [Alfred](https://www.alfredapp.com) workflow to search the [Particle documentation](https://docs.particle.io).
 
-![Alfred window showing the ansible workflow](./img/alfred_ansible.png)
+![Alfred window showing the Particle Docs workflow](./img/alfred_particle.png)
 
 
 ## Requirements
@@ -19,16 +19,14 @@ Required modules can be installed using pip:
 
 You can either download the workflow from the release page or from packal
 
-* https://github.com/abyth/alfred-ansible-workflow/releases
+* https://github.com/Dan-Kouba/alfred-particle-docs-search/releases
 * http://www.packal.org/workflow/ansible-documentation-search
 
 
 ## Usage
 
-The workflow is triggered using the keyword `ansible` and will use the following input as search parameters.
-
-![Workflow searching for lineinfile](./img/alfred_ansible_usage.png)
+The workflow is triggered using the keyword `pd` and will use the following input as the search query.
 
 Pressing `enter` on any of the results will open the corresponding documentation page in the default browser.
 
-![Safari window with the builtin.lineinfile module documentation](./img/alfred_ansible_browser.png)
+Holding `shift` while selecting any result will allow copying of a URL to the clipboard
